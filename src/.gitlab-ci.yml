@@ -1,0 +1,72 @@
+stages:
+  - install
+  - test
+  - build
+  - deploy
+install_dependencies:
+  stage: install
+  image: node:12-alpine
+  script:
+    - npm install
+  only:
+    - master
+  cache:
+    paths:
+      - node_modules
+    key:
+      files:
+        - package-lock.json
+
+build_app:
+  image: node:12-alpine
+  stage: build
+  script:
+    - npm link @angular/cli@15.2.0
+    - npm run build
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/dist
+  only:
+  - master
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+      - $CI_PROJECT_DIR/dist
+    policy: pull
+
+test_stage:
+  image: markhobson/node-chrome:latest
+  stage: test
+  script:
+    - npm link @angular/cli@12.2.0
+    - npm test -- --browsers=ChromeHeadless --watch=false
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+  only:
+    - master
+deploy-stage:
+  stage: deploy
+  image: alpine
+  before_script:
+    - apk add zip
+    - apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$MY_SSH_PRIVATE" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - zip -r my_app_build.zip $CI_PROJECT_DIR/dist
+    - scp -o StrictHostKeyChecking=no my_app_build.zip $SSH_USER@$VM_IPADDRESS:/home
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$VM_IPADDRESS "cd /home; touch foo.txt; unzip -o my_app_build.zip -d /var/www/html"
+  cache:
+    paths:
+      - $CI_PROJECT_DIR/dist
+    policy: pull

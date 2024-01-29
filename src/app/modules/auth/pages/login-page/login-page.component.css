@@ -1,0 +1,165 @@
+.login-auth-page {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #191414; /* Dark background similar to Spotify */
+    color: #fff; /* Text color */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-auth-page .login-auth-wrapper {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212; /* Dark background for the login box */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Add some padding for better spacing */
+}
+
+.login-auth-page .login-social-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.login-auth-page .social-btn {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.login-auth-page .social-btn:hover {
+    background-color: #282828; 
+    border: 1px solid white;
+}
+
+.login-auth-page .login-social-zone .social-btn.btn-fb {
+    background-color: #1877f2; 
+    color: #fff;
+}
+
+.login-auth-page .login-social-zone .social-btn.btn-apple {
+    background-color: #000;
+    color: #fff;
+}
+
+.login-auth-page .separator {
+    width: 100%;
+    margin: 20px 0;
+    border-bottom: solid 1px #333; /* Darker separator */
+    opacity: 0.2;
+}
+
+.login-auth-page .login-auth-form {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.login-auth-page .login-auth-form .form-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.login-auth-page .login-auth-form .form-group input {
+    border: solid 1px #282828; /* Darker border color */
+    border-radius: 8px;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: #ffffff; 
+    color: black;
+}
+
+.login-auth-page .login-auth-form label {
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.login-auth-page .login-auth-form .form-steps {
+    padding: 10px 0;
+}
+
+.login-auth-page .login-auth-form .form-steps .link {
+    color: #b3b3b3;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.login-auth-page .login-auth-form .form-steps .link:hover {
+    color: #fff;
+}
+
+.login-auth-page .login-auth-form .form-action .login {
+    color: black;
+    margin: 20px 0;
+    background-color: #1abc54; /* Spotify green color */
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.login-auth-page .login-auth-form .form-action .login:hover {
+    background-color: #265737; /* Slightly lighter green on hover */
+}
+
+input.ng-invalid.ng-touched {
+    border: solid 2px red !important;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .login-auth-page .login-auth-wrapper {
+        width: 70%;
+    }
+    
+    .login-auth-page .login-auth-form .form-steps .link {
+        font-size: 12px;
+    }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+    .login-auth-page .login-auth-wrapper {
+        width: 90%;
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px; /* Add some spacing to the bottom */
+}
+
+.text-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff; /* Set the text color to white */
+    margin: 0; /* Remove default margin */
+}
+
+/* Adjust the width and padding for smaller screens */
+@media (max-width: 768px) {
+    .title {
+        justify-content: center; 
+    }
+}

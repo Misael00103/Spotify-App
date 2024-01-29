@@ -1,0 +1,34 @@
+/* Estilos para el componente de búsqueda */
+.search-component {
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column; /* Cambiado a column para separar el resultado del input */
+}
+
+.search-component input {
+    border: 0;
+    border-radius: 3rem;
+    height: 40px;
+    width: 100%;
+    max-width: 20rem;
+    padding: 0 1rem;
+    font-size: 90%;
+    outline: none;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease; /* Añadido border-bottom */
+    border-bottom: 2px solid transparent; /* Añadido border-bottom */
+    margin-bottom: 0.5rem; /* Nueva propiedad para ajustar el margen inferior */
+    margin-top: 0.5rem;
+}
+
+/* Estilo para el borde del input en enfoque */
+.search-component input:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #1db954; /* Cambiado a verde para indicar enfoque */
+}
+
+/* Estilo para el texto "Resultado" */
+.search-component div {
+    margin-top: 0.5rem;
+    font-size: 80%;
+    color: #b3b3b3;
+}
