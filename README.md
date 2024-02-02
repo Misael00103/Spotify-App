@@ -1,4 +1,5 @@
 # SpotifyApp
+![image](https://github.com/Misael00103/Spotify-App/assets/68718644/50a3bb02-ee7c-4351-b159-0313cb08d65c)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
