@@ -1,15 +1,10 @@
-# SpotifyApp
-![image](https://github.com/Misael00103/Spotify-App/assets/68718644/7b765b59-2ba6-47ea-8f40-011edeed372e)
-![image](https://github.com/Misael00103/Spotify-App/assets/68718644/0ac41bb8-c78c-4a41-9604-697b29272ef8)
+# Spotify
 
-
-![image](https://github.com/Misael00103/Spotify-App/assets/68718644/50a3bb02-ee7c-4351-b159-0313cb08d65c)
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
